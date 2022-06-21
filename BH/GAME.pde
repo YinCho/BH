@@ -13,7 +13,7 @@ void addObjects() {
   if (frameCount % 60 == 0) objects.add(new Enemy());
   if (frameCount % 250 == 0) objects.add(new Enemy2());
   if (frameCount % 360 == 0) objects.add(new Enemy3());
-  if (bossspawn == 2) {
+  if (bossspawn > 2) {
     objects.add(new Enemy4());
     bossspawn = 0;
   }
@@ -26,7 +26,7 @@ void gameEngine() {
     GameObject s = objects.get(i);
     s.act();
     s.show();
-    if (s.lives == 0) {
+    if (s.lives <= 0) {
       objects.remove(i);
     } else {
       i++;
@@ -38,6 +38,7 @@ void debug() {
   fill(255);
   text(frameRate, 17, 20);
   text(objects.size(), 20, 40);
+  println(bossspawn);
 }
 
 void gameClicks() {

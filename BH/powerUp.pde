@@ -16,7 +16,9 @@ class powerUp extends GameObject {
   }
 
   void show() {
-    fill(c);
-    circle(x, y, size);
+    if (gunMode < 16) {
+      fill(c);
+      circle(x, y, size);
+    }
   }
 }

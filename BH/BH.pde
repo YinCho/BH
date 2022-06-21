@@ -5,7 +5,7 @@ final int GAME = 1;
 final int GAMEOVER = 2;
 final int PAUSE = 3;
 int mode;
-PImage ship1, ship2, intro;
+PImage ship1, ship2, intro, enemyShip;
 boolean up, down, left, right, space;
 int shipLives, bossspawn;
 final int SINGLE = 11;
@@ -30,6 +30,7 @@ void setup() {
   player1 = new Starfighter();
   objects.add(player1);
   gunMode = 11;
+  enemyShip = loadImage("enemyship.png");
 }
 
 void draw() {

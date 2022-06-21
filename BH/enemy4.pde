@@ -5,7 +5,7 @@ class Enemy4 extends GameObject {
   Enemy4() {
     super(-200, 250, 3, 3, 250, #D9CFC1, 20);
     cooldown = 0;
-    threshold = 100;
+    threshold = 30;
   }
 
   void act() {
@@ -13,10 +13,7 @@ class Enemy4 extends GameObject {
     //shoot
     cooldown++;
     if (cooldown == threshold) {
-      objects.add(new EnemyBullet(x+50, y+50, 5, 5));
-      objects.add(new EnemyBullet(x-50, y+50, -5, 5));
-      objects.add(new EnemyBullet(x+50, y-50, 5, -5));
-      objects.add(new EnemyBullet(x-50, y-50, -5, -5));
+  objects.add(new EnemyBullet(x, y, 0, 5));
 
       cooldown = 0;
     }
@@ -49,6 +46,10 @@ class Enemy4 extends GameObject {
     if (x > player1.x) {
       x = x - 3;
     }
+    
+    if (gunMode >= 16) {
+      lives = 100;
+    }
 
 
     //if (amongus.x > width/2) {
@@ -59,7 +60,9 @@ class Enemy4 extends GameObject {
     //}
   }
   void show() {
+    
     fill(c);
-    rect(x, y, size, size);
+    image(enemyShip,x,y,size+100,size);
+  
   }
 }
