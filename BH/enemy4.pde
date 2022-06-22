@@ -13,7 +13,7 @@ class Enemy4 extends GameObject {
     //shoot
     cooldown++;
     if (cooldown == threshold) {
-  objects.add(new EnemyBullet(x, y, 0, 5));
+  objects.add(new EnemyBullet(x, y+20, 0, 5));
 
       cooldown = 0;
     }
@@ -33,6 +33,7 @@ class Enemy4 extends GameObject {
             objects.add(new particleClass(x, y, random(-2, 2), random(-2, 2), random(10, 30)));
             objects.add(new particleClass(x, y, random(-2, 2), random(-2, 2), random(10, 30)));
             objects.add(new powerUp(x, y));
+            
           }
         }
       }
@@ -62,7 +63,7 @@ class Enemy4 extends GameObject {
   void show() {
     
     fill(c);
-    image(enemyShip,x,y,size+100,size);
+    image(bossship,x,y,size,size);
   
   }
 }

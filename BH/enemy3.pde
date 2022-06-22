@@ -41,4 +41,7 @@ class Enemy3 extends GameObject {
     }
     if (offScreen()) lives = 0;
   }
+   void show() {
+    image(enemyship2,x,y,size,size);
+  }
 }

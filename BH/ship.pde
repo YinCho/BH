@@ -3,7 +3,7 @@ class Starfighter extends GameObject {
   int livesRenew;
 
   Starfighter() {
-    super(width/2, height/2, 0, 0, 60, #FF0000, 1000);
+    super(width/2, height/2, 0, 0, 60, #FF0000, 5);
     threshold = 10;
     cooldown = threshold;
   }
@@ -36,7 +36,7 @@ class Starfighter extends GameObject {
         objects.add (new Bullet(x-10, y+20));
       } else if (gunMode >= 16) {
         objects.add (new Bullet(x, y+20));
-        threshold = -10;
+        threshold = 0;
       }
       cooldown = 0;
       if (offScreen()) lives = 0;

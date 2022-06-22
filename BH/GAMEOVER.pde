@@ -1,5 +1,5 @@
 void gameover() {
-  background(255);
+  background(gameover);
 }
 
 void gameoverClicks() {
